@@ -1,0 +1,234 @@
+﻿body {
+    height: auto;
+    background: #89b6d3;
+    /*overflow: hidden;*/
+    z-index: 1;
+    /*background-color: #FFFFF4;*/
+}
+.bgc {
+    background-color: #FFECCC;
+    height: auto;
+    width: 1200px;
+    margin-top: 80px;
+    border-radius: 30px;
+}
+.cube{
+    position: absolute;
+    margin-left: 1000px;
+    padding-top: 10px;
+}
+/*.title {
+    background-color: #C8D6AF;
+}*/
+.left-box { /*置中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table-responsive {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: auto;
+    display: block;
+    overflow-x: auto;
+}
+.topnav {
+    position: absolute;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+.box {
+    background-color: #FFECCC;
+    height: auto;
+    width: 800px;
+    margin-top: 80px;
+    border-radius: 30px;
+}
+
+.ousbox { /*讓內容(.box)置中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-jump {
+    height: 150px;
+    /*position: fixed;*/
+}
+.box-jump:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    /*top: 60px;*/
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background: #c00;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+.box-jump:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 128px;
+    left: 52px;
+    width: 44px;
+    height: 3px;
+    background: #eaeaea;
+    border-radius: 100%;
+}
+.box-jump:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 60px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background: #c00;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    -webkit-animation: box .8s infinite;
+}
+
+@-webkit-keyframes box {
+0% {
+        top: 50px;
+    }
+
+    20% {
+        border-radius: 2px; /*從 20% 的地方才開始變形*/
+    }
+
+    50% {
+        top: 80px;
+        border-bottom-right-radius: 25px;
+    }
+
+    80% {
+        border-radius: 2px; /*到 80% 的地方恢復原狀*/
+    }
+
+    100% {
+        top: 50px;
+    }
+}
+
+.box-jump:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 128px;
+    left: 52px;
+    width: 44px;
+    height: 3px;
+    background: #eaeaea;
+    border-radius: 100%;
+    -webkit-animation: shadow .8s infinite;
+}
+
+@-webkit-keyframes shadow {
+    0%,100% {
+        left: 54px;
+        width: 40px;
+        background: #eaeaea;
+    }
+
+    50% {
+        top: 126px;
+        left: 50px; /*讓陰影保持在原位*/
+        width: 50px;
+        height: 7px;
+        background: #eee;
+    }
+}
+
+/* web2背景*/
+.bubble {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*z-index defult value=1*/
+    z-index: 0;
+    /*upgrade gpu rendering*/
+    transform: translateZ(0);
+}
+
+    .bubble li {
+        position: absolute;
+        list-style: none;
+        display: block;
+        background: rgba(255,255,255,0.2);
+        /*make bubble on page bottom*/
+        bottom: -100px;
+        animation: bubble-ani 20s linear infinite;
+        border-radius: 100%;
+    }
+
+        /* glow of the bubbles*/
+        .bubble li:before {
+            position: absolute;
+            left: 20%;
+            top: 21%;
+            width: 25%;
+            content: '';
+            background: rgba(255,255,255,0.2);
+            display: block;
+            height: 25%;
+            border-radius: 100%;
+        }
+
+        .bubble li:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            left: 15%;
+        }
+
+        .bubble li:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            left: 40%;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        .bubble li:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            left: 30%;
+            animation-duration: 4s;
+            animation-delay: 1s;
+        }
+
+        .bubble li:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            left: 55%;
+            animation-duration: 5s;
+            animation-delay: 0.5s;
+        }
+
+        .bubble li:nth-child(5) {
+            width: 20px;
+            height: 20px;
+            left: 35%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+@keyframes bubble-ani {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-1080px);
+        transform: translateY(-1080px);
+    }
+}
